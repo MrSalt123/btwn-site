@@ -1,8 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import Hero from "@/components/Hero";
 import DeliverSection from "@/components/DeliverSection";
+import ServiceCards from "@/components/ServiceCards";
 
 export default function Home() {
   return (
@@ -15,9 +15,7 @@ export default function Home() {
         ctaLink="/call"
       />
       <DeliverSection />
-      <div className="h-[100vh]">
-
-      </div>
+      <ServiceCards />
     </div>
   );
 }

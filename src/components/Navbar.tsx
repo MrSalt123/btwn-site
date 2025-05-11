@@ -28,7 +28,7 @@ export default function Navbar() {
       />
 
       <nav className="flex gap-12 text-sm sm:text-xl">
-        {['services', 'quotes', 'about', 'contact'].map((item) => (
+        {['services', 'work', 'about', 'contact'].map((item) => (
           <Link
             key={item}
             href={`/${item}`}

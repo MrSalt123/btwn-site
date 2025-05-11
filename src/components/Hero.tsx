@@ -13,8 +13,8 @@ export default function Hero({
 }) {
   return (
     <section className="flex h-[85vh] flex-col items-center justify-center px-6 text-center">
-      <h1 className="text-4xl md:text-6xl font-bold text-foreground">{headline}</h1>
-      <p className="mt-4 max-w-xl text-lg text-neutral-500">{subline}</p>
+      <h1 className="text-4xl md:text-6xl text-foreground font-display font-bold">{headline}</h1>
+      <p className="mt-4 max-w-xl text-lg text-neutral-500 font-display">{subline}</p>
 
       {/* ——— CTA button ——— */}
       <a
@@ -30,7 +30,7 @@ export default function Hero({
         <span
           className="
             transition-transform duration-300
-            group-hover:-translate-x-2                 /* ➊ slides left ≈½ arrow */
+            group-hover:-translate-x-2 font-display          
           "
         >
           {cta}
