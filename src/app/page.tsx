@@ -3,6 +3,7 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 import Hero from "@/components/Hero";
 import DeliverSection from "@/components/DeliverSection";
 import ServiceCards from "@/components/ServiceCards";
+import IncludeSection from "@/components/IncludeSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,11 @@ export default function Home() {
       />
       <DeliverSection />
       <ServiceCards />
+      <IncludeSection />
+      
+
+
+
     </div>
   );
 }
