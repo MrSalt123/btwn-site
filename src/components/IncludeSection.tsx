@@ -77,7 +77,7 @@ export default function IncludeSection() {
             group-hover:-translate-x-2 font-display          
           "
                     >
-                        Let's talk
+                        Let&apos;s talk
                     </span>
 
                     <span
