@@ -8,7 +8,6 @@ import IncludeSection from "@/components/IncludeSection";
 export default function Home() {
   return (
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
-      <ParticlesBackground />
       <Hero
         headline="Digital clarity, delivered by BTWN."
         subline="Zero clutter. Maximum impact."
@@ -18,10 +17,6 @@ export default function Home() {
       <DeliverSection />
       <ServiceCards />
       <IncludeSection />
-      
-
-
-
     </div>
   );
 }
