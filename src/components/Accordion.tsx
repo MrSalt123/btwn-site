@@ -46,11 +46,9 @@ const sections = [
 
 export default function AccordionGrid() {
     const [openIndex, setOpenIndex] = useState<number>(0);
-    const [imageKey, setImageKey] = useState<number>(0);
 
     const toggle = (index: number) => {
         setOpenIndex(openIndex === index ? -1 : index);
-        setImageKey((prev) => prev + 1);
     };
 
     return (
