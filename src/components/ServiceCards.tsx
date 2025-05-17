@@ -7,7 +7,7 @@ import Card from "./Card";
 const tiers = [
     {
       name: "Starter Site",
-      price: "499",
+      price: "599",
       description: "Perfect for small businesses getting online.",
       features: [
         "1–4 Static Pages",
@@ -30,7 +30,7 @@ const tiers = [
     },
     {
       name: "Pro Site",
-      price: "1999",
+      price: "1599",
       description: "For businesses needing advanced features & scale.",
       features: [
         "Unlimited Pages",
