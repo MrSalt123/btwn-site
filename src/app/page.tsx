@@ -1,8 +1,8 @@
 "use client";
 import Hero from "@/components/Hero";
-import DeliverSection from "@/components/DeliverSection";
 import ServiceCards from "@/components/ServiceCards";
-import IncludeSection from "@/components/IncludeSection";
+const DeliverSection = dynamic(() => import('@/components/DynamicDeliver'), { ssr: false });
+const IncludeSection = dynamic(() => import('@/components/DynamicInclude'), { ssr: false });
 import dynamic from "next/dynamic";
 const ParticlesBackground = dynamic(() => import("@/components/ParticlesBackground"), { ssr: false });
 
