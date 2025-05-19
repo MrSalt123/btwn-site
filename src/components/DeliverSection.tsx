@@ -65,28 +65,32 @@ export default function DeliverSection() {
         <div className="flex flex-col md:flex-row gap-4 mb-4 justify-center mx-auto">
 
           <div className="w-full md:w-1/2 flex flex-col items-center text-center">
-          <motion.div
-  ref={(el) => { cardRefs.current[0] = el; }}
-  className="glow-card relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.1 }}
-  viewport={{ once: true }}
->
-  <Image src={features[0].src} alt={features[0].alt} width={240} height={240} className="mx-auto" />
-  <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
-    {features[0].title}
-  </h3>
-  <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
-    {features[0].text}
-  </p>
-</motion.div>
+            <motion.div
+              ref={(el) => { cardRefs.current[0] = el; }}
+              className="glow-card relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0, duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Image src={features[0].src} alt={features[0].alt} width={240} height={240} className="mx-auto" />
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
+                {features[0].title}
+              </h3>
+              <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
+                {features[0].text}
+              </p>
+            </motion.div>
           </div>
 
           <div className="w-full md:w-1/2 flex flex-col items-center text-center">
-            <div
+            <motion.div
               ref={(el) => { cardRefs.current[1] = el; }}
-              className="glow-card h-full relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
+              className="glow-card relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: .2, duration: 0.6 }}
+              viewport={{ once: true }}
             >
               <Image src={features[1].src} alt={features[1].alt} width={240} height={240} className="mx-auto" />
               <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
@@ -95,15 +99,19 @@ export default function DeliverSection() {
               <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
                 {features[1].text}
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
 
         {/* Bottom Row: Full Width */}
         <div className="w-full flex flex-col items-center text-center max-w-3xl mx-auto">
-          <div
+          <motion.div
             ref={(el) => { cardRefs.current[2] = el; }}
             className="glow-card relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: .2, duration: 0.6 }}
+            viewport={{ once: true }}
           >
             <Image src={features[2].src} alt={features[2].alt} width={240} height={240} className="mx-auto" />
             <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
@@ -112,7 +120,7 @@ export default function DeliverSection() {
             <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
               {features[2].text}
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
