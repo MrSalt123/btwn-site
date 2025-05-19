@@ -1,5 +1,6 @@
-// components/Card.tsx
 import { motion } from "framer-motion";
+import { Badge } from 'lucide-react';
+
 
 type CardProps = {
   title: string;
@@ -16,18 +17,33 @@ export default function Card({ title, description, features, price, delay = 0 }:
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-white/10 backdrop-blur-xl p-8 rounded-3xl shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out text-left h-full flex flex-col"
+      className="bg-white/10 backdrop-blur-xl p-8 rounded-3xl shadow-xl hover:scale-[1.03] transition-transform duration-300 ease-in-out text-left h-full flex flex-col max-w-[320px] mx-auto"
     >
-      <h3 className="text-2xl font-display font-bold text-[var(--color-foreground)] mb-2">{title}</h3>
-      <p className="text-[var(--color-neutral-400)] font-display mb-4">{description}</p>
-      <ul className="text-sm text-[var(--color-neutral-400)] font-display space-y-2 mb-6">
+      <div>
+        <h3 className="text-3xl font-display font-bold text-foreground mb-2 text-center">
+          <span className="bg-gradient-to-r from-accent-400 via-accent to-accent-400 bg-clip-text text-transparent">{title}</span>
+        </h3>
+        <p className="text-neutral-300 font-display text-center mb-4 text-base">
+          {description}
+        </p>
+        <div className="text-center mb-6">
+          <p className="text-sm text-[var(--color-neutral-400)] uppercase tracking-wide mb-1 font-display">
+            Starting at
+          </p>
+          <p className="text-4xl font-bold text-[var(--color-foreground)]">
+            ${price}
+          </p>
+        </div>
+      </div>
+
+      <ul className="text-[var(--color-foreground)] text-base font-medium space-y-4 mb-8">
         {features.map((feature, idx) => (
-          <li key={idx}>• {feature}</li>
+          <li key={idx} className="flex items-start gap-3">
+            <Badge className="w-5 h-5 text-accent mt-1 shrink-0" />
+            <span className="font-display">{feature}</span>
+          </li>
         ))}
       </ul>
-      <div className="mt-auto pt-4">
-        <p className="text-xl font-bold text-[var(--color-foreground)]">Starting at ${price}</p>
-      </div>
     </motion.div>
   );
 }

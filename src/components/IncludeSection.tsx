@@ -53,7 +53,7 @@ export default function IncludeSection() {
                 </div>
             </section>
 
-            <section className="bg-background text-white py-24 px-6 text-center">
+            <section className="text-white py-24 px-6 text-center">
                 <div className="max-w-2xl mx-auto">
                     <h2 className="text-foreground text-4xl md:text-5xl font-display font-bold">
                         Ready to grow online?
