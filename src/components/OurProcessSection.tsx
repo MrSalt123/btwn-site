@@ -34,30 +34,32 @@ const steps = [
 export default function OurProcessSection() {
     useEffect(() => {
         const container = document.querySelector(".img-group-container");
-      
+
         if (!container) return; // 👈 early return if not found
-      
+
         const items = document.querySelectorAll(".img-container");
-      
+
         scroll(
-          animate(".img-group", {
-            transform: ["none", `translateX(-${items.length - 1}00vw)`],
-          }),
-          { target: container }
+            animate(".img-group", {
+                transform: ["none", `translateX(-${items.length - 1}00vw)`],
+            }),
+            { target: container }
         );
-      
+
         scroll(
-          animate(".progress", { scaleX: [0, 1] }),
-          { target: container }
+            animate(".progress", { scaleX: [0, 1] }),
+            { target: container }
         );
-      }, []);
-      
+    }, []);
+
 
     return (
         <article id="our-process" className="w-[98vw]">
             <header className="h-[70vh] flex items-center justify-center">
                 <h2 className="text-[56px] font-bold text-center font-display">
-                    Our Process
+                    <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent whitespace-nowrap [text-shadow:0_0_24px_var(--accent-300)]">
+                        Our Process
+                    </span>
                 </h2>
             </header>
 
