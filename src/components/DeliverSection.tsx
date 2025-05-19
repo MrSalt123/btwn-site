@@ -29,7 +29,7 @@ const features = [
 
 
 export default function DeliverSection() {
-  const cardRefs = useRef([]);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     cardRefs.current.forEach((card) => {
