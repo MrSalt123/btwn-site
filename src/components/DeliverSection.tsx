@@ -50,12 +50,18 @@ export default function DeliverSection() {
       <div className="absolute inset-0 bg-[url('/noise.jpg')] bg-repeat opacity-15 mix-blend-overlay pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl py-24 px-6 text-foreground">
-        <h2 className="text-3xl md:text-5xl font-display font-semibold mb-24 text-center">
-          Everything You Need.
+        <h2 className="text-3xl md:text-5xl font-display font-semibold mb-16 text-center">
+          <div className="inline-flex flex-col items-center">
+            <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent whitespace-nowrap">
+              Everything You Need.
+            </span>
+            <div className="mt-2 h-[2px] w-[80%] bg-gradient-to-r from-accent-200 via-accent to-accent-200 rounded-full" />
+          </div>
         </h2>
 
+
         {/* Horizontal Feature Grid */}
-        <div className="flex flex-col md:flex-row gap-6 mb-6 justify-center mx-auto">
+        <div className="flex flex-col md:flex-row gap-4 mb-4 justify-center mx-auto">
 
           <div className="w-full md:w-1/2 flex flex-col items-center text-center">
             <div
@@ -71,7 +77,7 @@ export default function DeliverSection() {
               </p>
             </div>
           </div>
-          
+
           <div className="w-full md:w-1/2 flex flex-col items-center text-center">
             <div
               ref={(el) => { cardRefs.current[1] = el; }}
