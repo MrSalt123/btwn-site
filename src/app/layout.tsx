@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "BTWN",
   description: "Web made simple",
+  icons: {
+    icon: "/favicon.svg", // or .png, .svg, etc.
+  },
 };
 
 export default function RootLayout({
