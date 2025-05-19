@@ -7,7 +7,7 @@ const features = [
     title: "Fast-loading websites",
     text:
       "From code to image delivery, we optimize every asset so your site feels instant.",
-    src: "/rocket-launch.json",
+    src: "/rocket.json",
     alt: "Rocket blasting forward",
   },
   {
@@ -36,20 +36,20 @@ export default function DeliverSection() {
 
       <div className="relative z-10 mx-auto max-w-7xl py-24 px-6 text-foreground">
         <h2 className="text-3xl md:text-5xl font-display font-semibold mb-24">
-          Everything&nbsp;your&nbsp;business&nbsp;needs&nbsp;to&nbsp;succeed.
+          Everything your business needs to succeed.
         </h2>
 
         {/* Horizontal Feature Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col max-w-sm mx-auto">
-                <Player
-                  src={feature.src}
-                  autoplay
-                  loop
-                  style={{ height: 160, width: 160 }}
-                  aria-label={feature.alt}
-                />
+              <Player
+                src={feature.src}
+                autoplay
+                loop
+                style={{ height: 160, width: 160 }}
+                aria-label={feature.alt}
+              />
               <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
                 {feature.title}
               </h3>

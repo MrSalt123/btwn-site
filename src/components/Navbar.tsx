@@ -49,7 +49,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Toggle */}
       <button
-        className="md:hidden text-neutral-900"
+        className="md:hidden text-foreground"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
       >

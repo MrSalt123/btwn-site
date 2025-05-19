@@ -12,11 +12,14 @@ export default function Hero() {
       <a
         href="/call"
         className="
-          group relative mt-8 inline-flex items-center justify-center
+          group relative mt-8 inline-flex items-center justify-center text-center
           rounded-full bg-accent px-8 py-3
           text-background transition hover:bg-accent-hover hover:cursor-pointer
           focus:outline-none
         "
+        style={{
+          boxShadow: '0 -6px 30px -6px var(--accent-500), 0 6px 30px -6px var(--accent-500)',
+        }}
       >
         {/* -------- Label -------- */}
         <span
