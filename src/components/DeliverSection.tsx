@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 const features = [
@@ -28,6 +29,20 @@ const features = [
 
 
 export default function DeliverSection() {
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    cardRefs.current.forEach((card) => {
+      if (!card) return;
+      card.onmousemove = (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty("--x", `${x}px`);
+        card.style.setProperty("--y", `${y}px`);
+      };
+    });
+  }, []);
   return (
     <section className="relative overflow-hidden shadow-lg">
       {/* Background & grain layers */}
@@ -40,39 +55,53 @@ export default function DeliverSection() {
         </h2>
 
         {/* Horizontal Feature Grid */}
-        <div className="flex flex-col md:flex-row gap-12 mb-16">
-          {/* Left column (2/3 or 3/4 width) */}
-          <div className="w-full md:w-2/3 lg:w-3/4 flex flex-col items-center text-center max-w-xl mx-auto">
-            <Image src={features[0].src} alt={features[0].alt} width={300} height={300} />
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
-              {features[0].title}
-            </h3>
-            <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
-              {features[0].text}
-            </p>
-          </div>
+        <div className="flex flex-col md:flex-row gap-6 mb-6 justify-center mx-auto">
 
-          {/* Right column (1/3 or 1/4 width) */}
-          <div className="w-full md:w-1/3 lg:w-1/4 flex flex-col items-center text-center max-w-sm mx-auto">
-            <Image src={features[1].src} alt={features[1].alt} width={300} height={300} />
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
-              {features[1].title}
-            </h3>
-            <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
-              {features[1].text}
-            </p>
+          <div className="w-full md:w-1/2 flex flex-col items-center text-center">
+            <div
+              ref={(el) => (cardRefs.current[0] = el)}
+              className="glow-card h-full relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
+            >
+              <Image src={features[0].src} alt={features[0].alt} width={240} height={240} className="mx-auto" />
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
+                {features[0].title}
+              </h3>
+              <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
+                {features[0].text}
+              </p>
+            </div>
+          </div>
+          
+          <div className="w-full md:w-1/2 flex flex-col items-center text-center">
+            <div
+              ref={(el) => (cardRefs.current[1] = el)}
+              className="glow-card h-full relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
+            >
+              <Image src={features[1].src} alt={features[1].alt} width={240} height={240} className="mx-auto" />
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
+                {features[1].title}
+              </h3>
+              <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
+                {features[1].text}
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Bottom Row: Full Width */}
         <div className="w-full flex flex-col items-center text-center max-w-3xl mx-auto">
-          <Image src={features[2].src} alt={features[2].alt} width={300} height={300} />
-          <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
-            {features[2].title}
-          </h3>
-          <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
-            {features[2].text}
-          </p>
+          <div
+            ref={(el) => (cardRefs.current[2] = el)}
+            className="glow-card relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
+          >
+            <Image src={features[2].src} alt={features[2].alt} width={240} height={240} className="mx-auto" />
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
+              {features[2].title}
+            </h3>
+            <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
+              {features[2].text}
+            </p>
+          </div>
         </div>
       </div>
     </section>

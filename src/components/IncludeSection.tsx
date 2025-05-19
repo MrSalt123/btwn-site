@@ -69,6 +69,9 @@ export default function IncludeSection() {
           text-background transition hover:bg-accent-hover
           focus:outline-none hover:cursor-pointer
         "
+        style={{
+            boxShadow: '0 -6px 30px -6px var(--accent-500), 0 6px 30px -6px var(--accent-500)',
+          }}
                     >
 
                         <span

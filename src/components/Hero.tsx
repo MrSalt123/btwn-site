@@ -28,7 +28,7 @@ export default function Hero() {
             group-hover:-translate-x-2 font-display text-foreground      
           "
         >
-          Schedule a Call
+          Request a Quote
         </span>
 
         {/* -------- Arrow (drawn) -------- */}
