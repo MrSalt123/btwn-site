@@ -33,20 +33,25 @@ const steps = [
 
 export default function OurProcessSection() {
     useEffect(() => {
+        const container = document.querySelector(".img-group-container");
+      
+        if (!container) return; // 👈 early return if not found
+      
         const items = document.querySelectorAll(".img-container");
-
+      
         scroll(
-            animate(".img-group", {
-                transform: ["none", `translateX(-${items.length - 1}00vw)`],
-            }),
-            { target: document.querySelector(".img-group-container") }
+          animate(".img-group", {
+            transform: ["none", `translateX(-${items.length - 1}00vw)`],
+          }),
+          { target: container }
         );
-
+      
         scroll(
-            animate(".progress", { scaleX: [0, 1] }),
-            { target: document.querySelector(".img-group-container") }
+          animate(".progress", { scaleX: [0, 1] }),
+          { target: container }
         );
-    }, []);
+      }, []);
+      
 
     return (
         <article id="our-process" className="w-[98vw]">
