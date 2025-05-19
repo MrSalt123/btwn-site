@@ -59,7 +59,7 @@ export default function DeliverSection() {
 
           <div className="w-full md:w-1/2 flex flex-col items-center text-center">
             <div
-              ref={(el) => (cardRefs.current[0] = el)}
+              ref={(el) => { cardRefs.current[0] = el; }}
               className="glow-card h-full relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
             >
               <Image src={features[0].src} alt={features[0].alt} width={240} height={240} className="mx-auto" />
@@ -74,7 +74,7 @@ export default function DeliverSection() {
           
           <div className="w-full md:w-1/2 flex flex-col items-center text-center">
             <div
-              ref={(el) => (cardRefs.current[1] = el)}
+              ref={(el) => { cardRefs.current[1] = el; }}
               className="glow-card h-full relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
             >
               <Image src={features[1].src} alt={features[1].alt} width={240} height={240} className="mx-auto" />
@@ -91,7 +91,7 @@ export default function DeliverSection() {
         {/* Bottom Row: Full Width */}
         <div className="w-full flex flex-col items-center text-center max-w-3xl mx-auto">
           <div
-            ref={(el) => (cardRefs.current[2] = el)}
+            ref={(el) => { cardRefs.current[2] = el; }}
             className="glow-card relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
           >
             <Image src={features[2].src} alt={features[2].alt} width={240} height={240} className="mx-auto" />
