@@ -54,7 +54,7 @@ export default function OurProcessSection() {
 
 
     return (
-        <article id="our-process" className="w-[98vw]">
+        <article id="our-process">
             <header className="h-[70vh] flex items-center justify-center">
                 <h2 className="text-[56px] font-bold text-center font-display">
                     <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent whitespace-nowrap [text-shadow:0_0_24px_var(--accent-300)]">
