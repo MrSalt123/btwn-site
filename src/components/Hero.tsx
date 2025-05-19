@@ -1,28 +1,20 @@
 'use client';
 
-export default function Hero({
-  headline = 'BTWN. Built for what’s next.',
-  subline  = 'Future‑proof websites for growing brands.',
-  cta      = 'Request a Quote',
-  ctaLink  = '/contact',
-}: {
-  headline?: string;
-  subline ?: string;
-  cta     ?: string;
-  ctaLink ?: string;
-}) {
+export default function Hero() {
   return (
     <section className="flex h-[85vh] flex-col items-center justify-center px-6 text-center">
-      <h1 className="text-4xl md:text-6xl text-foreground font-display font-bold">{headline}</h1>
-      <p className="mt-4 max-w-xl text-lg text-neutral-500 font-display">{subline}</p>
+      <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground text-center">
+        Digital clarity, <span className="bg-gradient-to-r from-accent-200 via-accent to-accent bg-clip-text text-transparent">delivered by BTWN</span>
+      </h1>
+      <p className="mt-4 max-w-xl text-lg text-neutral-300 font-display">Zero clutter. Maximum impact.</p>
 
       {/* ——— CTA button ——— */}
       <a
-        href={ctaLink}
+        href="/call"
         className="
           group relative mt-8 inline-flex items-center justify-center
-          rounded-full bg-foreground px-8 py-3
-          text-background transition hover:bg-neutral-600
+          rounded-full bg-accent px-8 py-3
+          text-background transition hover:bg-accent-hover hover:cursor-pointer
           focus:outline-none
         "
       >
@@ -30,19 +22,19 @@ export default function Hero({
         <span
           className="
             transition-transform duration-300
-            group-hover:-translate-x-2 font-display          
+            group-hover:-translate-x-2 font-display text-foreground      
           "
         >
-          {cta}
+          Schedule a Call
         </span>
 
         {/* -------- Arrow (drawn) -------- */}
         <span
           className="
-            absolute right-4 flex items-center ml-3          /* sits inside padding */
-            origin-left                                  /* scales from the left edge */
-            scale-x-0 group-hover:scale-x-100            /* ➋ draw‑in animation */
-            transition-transform duration-300 ease-out
+            absolute right-4 flex items-center ml-3        
+            origin-left                            
+            scale-x-0 group-hover:scale-x-100        
+            transition-transform duration-300 ease-out text-foreground
           "
           aria-hidden="true"
         >

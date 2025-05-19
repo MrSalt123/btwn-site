@@ -1,24 +1,22 @@
-'use client';                                              // ① mark as Client Component
+'use client';                                      
 
 import { useEffect, useMemo, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadSlim } from '@tsparticles/slim';              // ② smallest preset (~35 kB gz)
+import { loadSlim } from '@tsparticles/slim';             
 
 export default function ParticlesBackground() {
   const [ready, setReady] = useState(false);
 
-  /* ③ initialise the engine once */
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadSlim(engine);                              // or loadFull/loadSnowPreset etc.
+      await loadSlim(engine);                              
     }).then(() => setReady(true));
   }, []);
 
-  /* ④ memo‑ise your options so React doesn’t re‑create them every render */
   const options = useMemo(
     () => ({
-      fullScreen: { enable: true, zIndex: -1 },            // behind all content
-      background: { color: '#f1f1f1' },
+      fullScreen: { enable: true, zIndex: -1 },            
+      background: { color: '#1a1a1a' },
       fpsLimit: 60,
       interactivity: {
         events: { onHover: { enable: true, mode: 'repulse' } },
@@ -30,7 +28,7 @@ export default function ParticlesBackground() {
         stroke : { width: 0 },
         move   : { enable: true, speed: 1.2 },
         links  : { enable: true, opacity: 0.4 },
-        color  : { value: '#1a1a1a' },
+        color  : { value: '#f1f1f1' },
       },
       detectRetina: true,
     }),

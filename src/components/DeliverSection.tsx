@@ -31,10 +31,10 @@ export default function DeliverSection() {
   return (
     <section className="relative overflow-hidden shadow-lg">
       {/* Background & grain layers */}
-      <div className="absolute inset-0 bg-foreground" />
+      <div className="absolute inset-0 bg-background" />
       <div className="absolute inset-0 bg-[url('/noise.jpg')] bg-repeat opacity-15 mix-blend-overlay pointer-events-none" />
 
-      <div className="relative z-10 mx-auto max-w-7xl py-24 px-6 text-background">
+      <div className="relative z-10 mx-auto max-w-7xl py-24 px-6 text-foreground">
         <h2 className="text-3xl md:text-5xl font-display font-semibold mb-24">
           Everything&nbsp;your&nbsp;business&nbsp;needs&nbsp;to&nbsp;succeed.
         </h2>
@@ -50,7 +50,7 @@ export default function DeliverSection() {
                   style={{ height: 160, width: 160 }}
                   aria-label={feature.alt}
                 />
-              <h3 className="text-2xl md:text-3xl font-display font-bold text-[var(--color-background)] mt-8 mb-4">
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
                 {feature.title}
               </h3>
               <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">{feature.text}</p>

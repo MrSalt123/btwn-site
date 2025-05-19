@@ -10,7 +10,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-7xl">
           {/* Text on the Left */}
           <div className="flex flex-col justify-center">
-            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
               At BTWN, we craft websites designed to perform — beautiful, fast, and built to grow with your brand.
             </h1>
           </div>

@@ -20,14 +20,14 @@ export default function Navbar() {
         h-[15vh] sticky top-0 z-50 w-full px-6 sm:px-8 transition-all duration-700 ease-in-out
         flex items-center justify-between
         ${visible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
-        ${scrolled ? 'bg-neutral-100/70 backdrop-blur-sm' : 'bg-transparent'}
+        ${scrolled ? 'bg-neutral-900/70 backdrop-blur-sm shadow-md' : 'bg-transparent'}
       `}
     >
       {/* Logo */}
       <Image
         src="/btwnlogowtext.svg"
         alt="Btwn logo"
-        className="cursor-pointer"
+        className="cursor-pointer invert"
         width={200}
         height={200}
         priority
