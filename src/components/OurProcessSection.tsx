@@ -63,7 +63,7 @@ export default function OurProcessSection() {
                 </h2>
             </header>
 
-            <section className="img-group-container h-[500vh] relative">
+            <section className="img-group-container h-[300vh] relative">
                 <div className="sticky top-0 overflow-hidden h-screen">
                     <ul className="img-group flex">
                         {steps.map((step, idx) => (
