@@ -1,98 +1,124 @@
 "use client";
 
-import { useEffect } from "react";
-import { animate, scroll } from "motion";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const steps = [
-    {
-        title: "Discovery",
-        description:
-            "We start with a conversation. You tell us about your goals, audience, and what’s not working. We’ll translate that into a plan that makes sense — no jargon, no fluff.",
-        image: "/discovery.svg",
-    },
-    {
-        title: "Design",
-        description:
-            "With the vision locked in, we create a clean, responsive layout tailored to your brand. You’ll get to preview and refine the look before we write a single line of code.",
-        image: "/design.svg",
-    },
-    {
-        title: "Build",
-        description:
-            "We turn the design into a fast, mobile-first website — complete with SEO, smooth animations, and everything you need to launch with confidence.",
-        image: "/build.svg",
-    },
-    {
-        title: "Launch & Support",
-        description:
-            "Once approved, we go live — but we don’t disappear. Every site includes support, hosting, and updates to keep things running smoothly.",
-        image: "/launch.svg",
-    },
+  {
+    title: "Discovery",
+    description:
+      "We start with a conversation. You tell us about your goals, audience, and what’s not working. We’ll translate that into a plan that makes sense — no jargon, no fluff.",
+    image: "/discovery.svg",
+  },
+  {
+    title: "Design",
+    description:
+      "With the vision locked in, we create a clean, responsive layout tailored to your brand. You’ll get to preview and refine the look before we write a single line of code.",
+    image: "/design.svg",
+  },
+  {
+    title: "Build",
+    description:
+      "We turn the design into a fast, mobile-first website — complete with SEO, smooth animations, and everything you need to launch with confidence.",
+    image: "/build.svg",
+  },
+  {
+    title: "Launch & Support",
+    description:
+      "Once approved, we go live — but we don’t disappear. Every site includes support, hosting, and updates to keep things running smoothly.",
+    image: "/launch.svg",
+  },
 ];
 
 export default function OurProcessSection() {
-    useEffect(() => {
-        const container = document.querySelector(".img-group-container");
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-        if (!container) return; 
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
 
-        const items = document.querySelectorAll(".img-container");
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const containerCenter = scrollLeft + container.offsetWidth / 2;
 
-        scroll(
-            animate(".img-group", {
-                transform: ["none", `translateX(-${items.length - 1}00vw)`],
-            }),
-            { target: container }
+      const closestIndex = cardRefs.current.reduce((closestIdx, card, idx) => {
+        if (!card) return closestIdx;
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const prevDistance = Math.abs(
+          (cardRefs.current[closestIdx]?.offsetLeft || 0) +
+            (cardRefs.current[closestIdx]?.offsetWidth || 0) / 2 -
+            containerCenter
         );
+        const currDistance = Math.abs(cardCenter - containerCenter);
+        return currDistance < prevDistance ? idx : closestIdx;
+      }, 0);
 
-        scroll(
-            animate(".progress", { scaleX: [0, 1] }),
-            { target: container }
-        );
-    }, []);
+      setActiveIndex(closestIndex);
+    };
 
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    return (
-        <article id="our-process">
-            <header className="h-[70vh] flex items-center justify-center">
-                <h2 className="text-[56px] font-bold text-center font-display">
-                    <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent whitespace-nowrap [text-shadow:0_0_24px_var(--accent-300)]">
-                        Our Process
-                    </span>
-                </h2>
-            </header>
+  return (
+    <section id="our-process" className="py-20">
+      <h2 className="text-center text-4xl md:text-5xl font-bold font-display mb-12">
+        <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent whitespace-nowrap [text-shadow:0_0_24px_var(--accent-300)]">
+          Our Process
+        </span>
+      </h2>
 
-            <section className="img-group-container h-[300vh] relative">
-                <div className="sticky top-0 overflow-hidden h-screen">
-                    <ul className="img-group flex">
-                        {steps.map((step, idx) => (
-                            <li
-                                className="img-container flex flex-col items-center justify-center w-screen h-screen flex-shrink-0"
-                                key={idx}
-                            >
-                                <Image
-                                    src={step.image}
-                                    alt={step.title}
-                                    width={300}
-                                    height={400}
-                                    className="mb-4"
-                                />
-                                <h3 className="text-[40px] font-bold font-display mb-4">
-                                    <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent whitespace-nowrap">
-                                        {step.title}
-                                    </span>
+      <div
+        ref={containerRef}
+        className="overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide"
+      >
+        <div className="flex w-max space-x-6 px-6">
+          {steps.map((step, idx) => (
+            <motion.div
+              ref={(el) => (cardRefs.current[idx] = el)}
+              key={idx}
+              className="snap-center w-[75vw] md:w-[50vw] flex-shrink-0 bg-background border border-neutral-800 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
+            >
+              <Image
+                src={step.image}
+                alt={step.title}
+                width={160}
+                height={160}
+                className="mb-4"
+              />
+              <h3 className="text-xl font-bold font-display mb-2">
+                <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent whitespace-nowrap">
+                  {step.title}
+                </span>
+              </h3>
+              <p className="text-sm text-muted-foreground max-w-xs">
+                {step.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
 
-                                </h3>
-                                <p className="text-lg max-w-xl font-display text-center px-4">
-                                    {step.description}
-                                </p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
-            <div className="progress fixed bottom-[50px] left-0 right-0 h-[5px] bg-purple-700 scale-x-0 origin-left" />
-        </article>
-    );
+      {/* Dot Indicators */}
+      <div className="mt-6 flex justify-center gap-2">
+        {steps.map((_, idx) => (
+          <div
+            key={idx}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              idx === activeIndex
+                ? "bg-accent scale-125"
+                : "bg-neutral-600 opacity-40"
+            }`}
+          />
+        ))}
+      </div>
+    </section>
+  );
 }

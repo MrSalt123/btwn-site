@@ -16,8 +16,7 @@
   --neutral-600: #353535;
   --neutral-700: #1a1a1a;
 
-  /* Accent – Dark Orchid */
-  /* Muted Royal Accent */
+  /* Accent */
   --accent-50: #ede9fe;
   --accent-100: #c4b5fd;
   --accent-200: #a78bfa;
@@ -162,4 +161,8 @@ body {
   inset: 2px;
   border-radius: 16px;
   z-index: 0;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

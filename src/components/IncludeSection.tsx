@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function IncludeSection() {
     return (
         <div>
-            <section className="bg-[var(--color-neutral-700)] text-foreground py-32 px-6">
+            <section className="bg-[var(--color-neutral-700)] text-foreground py-20 px-6">
                 <div className="max-w-6xl mx-auto text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-display font-bold">
                         Packed With <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent whitespace-nowrap">Power</span>
