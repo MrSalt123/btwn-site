@@ -51,7 +51,7 @@ export default function ContactPage() {
                     placeholder="Business Name"
                   />
                   <label
-                    htmlFor="name"
+                    htmlFor="business"
                     className="absolute left-3 top-1.5 text-sm text-neutral-500 transition-all
       peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-neutral-400
       peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-blue-600"
@@ -71,7 +71,7 @@ export default function ContactPage() {
                   placeholder="Email"
                 />
                 <label
-                  htmlFor="name"
+                  htmlFor="email"
                   className="absolute left-3 top-1.5 text-sm text-neutral-500 transition-all
       peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-neutral-400
       peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-blue-600"
