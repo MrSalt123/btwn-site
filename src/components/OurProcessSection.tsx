@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { animate, scroll, timeline } from "motion";
+import { animate, scroll } from "motion";
 import Image from "next/image";
 
 const steps = [
