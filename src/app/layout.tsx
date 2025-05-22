@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "BTWN",
   description: "Web made simple",
   icons: {
-    icon: "/favicon.svg", // or .png, .svg, etc.
+    icon: "/lines.svg", // or .png, .svg, etc.
   },
 };
 
