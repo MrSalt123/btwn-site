@@ -12,7 +12,7 @@ export default function Navbar() {
   const { visible, scrolled } = useScroll();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navItems = ['services', 'work', 'about', 'contact'];
+  const navItems = ['home', 'services', 'about', 'contact'];
 
   return (
     <div
@@ -39,7 +39,7 @@ export default function Navbar() {
         {navItems.map((item) => (
           <Link
             key={item}
-            href={`/${item}`}
+            href={item === 'home' ? '/' : `/${item}`}
             className="nav-link relative text-2xl capitalize font-display"
           >
             {item}

@@ -17,17 +17,12 @@ export default function ContactPage() {
         {/* Left: Text Content */}
         <div className="text-left">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Let’s build something great
+            <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent">Let’s build something great</span>
           </h1>
-          <p className="text-lg text-neutral-400 mb-8">
+          <p className="text-lg text-neutral-300 mb-8">
             We design and develop digital experiences that move your brand forward.
             Fill out the form to tell us what you need — we’ll follow up within one business day.
           </p>
-          <ul className="list-disc list-inside text-neutral-300 space-y-2">
-            <li>Fully custom websites (no templates)</li>
-            <li>End-to-end service — design, development, hosting</li>
-            <li>Ongoing support and updates included</li>
-          </ul>
         </div>
 
         {/* Right: Contact Form */}
@@ -38,79 +33,113 @@ export default function ContactPage() {
             </div>
           ) : (
             <form
-              onSubmit={handleSubmit}
+              action="https://formsubmit.co/hello@btwn.design" method="POST"
               className="grid gap-6"
             >
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block mb-2 font-medium">Your Name</label>
+                <div className="relative">
                   <input
                     required
                     type="text"
                     name="name"
-                    className="w-full border border-neutral-300 rounded-lg p-3 bg-white text-black"
+                    id="name"
+                    className="peer w-full border border-neutral-300 rounded-lg p-3 pt-6 bg-white text-black placeholder-transparent focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                    placeholder="Your Name"
                   />
+                  <label
+                    htmlFor="name"
+                    className="absolute left-3 top-1.5 text-sm text-neutral-500 transition-all
+      peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-neutral-400
+      peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-blue-600"
+                  >
+                    Your Name
+                  </label>
                 </div>
 
-                <div>
-                  <label className="block mb-2 font-medium">Business Name</label>
+                <div className="relative">
                   <input
                     required
                     type="text"
                     name="business"
-                    className="w-full border border-neutral-300 rounded-lg p-3 bg-white text-black"
+                    id="business"
+                    className="peer w-full border border-neutral-300 rounded-lg p-3 pt-6 bg-white text-black placeholder-transparent focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                    placeholder="Business Name"
                   />
+                  <label
+                    htmlFor="name"
+                    className="absolute left-3 top-1.5 text-sm text-neutral-500 transition-all
+      peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-neutral-400
+      peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-blue-600"
+                  >
+                    Business Name
+                  </label>
                 </div>
               </div>
 
-              <div>
-                <label className="block mb-2 font-medium">Email</label>
+              <div className="relative">
                 <input
                   required
-                  type="email"
+                  type="text"
                   name="email"
-                  className="w-full border border-neutral-300 rounded-lg p-3 bg-white text-black"
+                  id="email"
+                  className="peer w-full border border-neutral-300 rounded-lg p-3 pt-6 bg-white text-black placeholder-transparent focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                  placeholder="Email"
                 />
-              </div>
-
-              <div>
-                <label className="block mb-2 font-medium">Website (if any)</label>
-                <input
-                  type="url"
-                  name="website"
-                  placeholder="https://example.com"
-                  className="w-full border border-neutral-300 rounded-lg p-3 bg-white text-black"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-2 font-medium">What’s this about?</label>
-                <select
-                  required
-                  name="inquiry"
-                  className="w-full border border-neutral-300 rounded-lg p-3 bg-white text-black"
+                <label
+                  htmlFor="name"
+                  className="absolute left-3 top-1.5 text-sm text-neutral-500 transition-all
+      peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-neutral-400
+      peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-blue-600"
                 >
-                  <option value="">Select one</option>
-                  <option value="new-site">New Website</option>
-                  <option value="redesign">Redesign</option>
-                  <option value="support">Ongoing Support</option>
-                  <option value="other">Something Else</option>
-                </select>
+                  Email
+                </label>
               </div>
 
-              <div>
-                <label className="block mb-2 font-medium">Message</label>
+              <div className="relative">
+                <input
+                  required
+                  type="text"
+                  name="website"
+                  id="website"
+                  className="peer w-full border border-neutral-300 rounded-lg p-3 pt-6 bg-white text-black placeholder-transparent focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                  placeholder="Website"
+                />
+                <label
+                  htmlFor="website"
+                  className="absolute left-3 top-1.5 text-sm text-neutral-500 transition-all
+      peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-neutral-400
+      peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-blue-600"
+                >
+                  Website (if applicable)
+                </label>
+              </div>
+
+              <div className="relative">
                 <textarea
                   required
                   name="message"
+                  id="message"
                   rows={5}
-                  className="w-full border border-neutral-300 rounded-lg p-3 bg-white text-black"
+                  placeholder="Your message"
+                  className="peer w-full border border-neutral-300 rounded-lg pt-6 p-3 bg-white text-black placeholder-transparent focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                 ></textarea>
+                <label
+                  htmlFor="message"
+                  className="absolute left-3 top-1.5 text-sm text-neutral-500 transition-all
+      peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-neutral-400
+      peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-blue-600"
+                >
+                  Message
+                </label>
               </div>
+
 
               <button
                 type="submit"
-                className="bg-accent text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 transition"
+                className="bg-accent text-white font-semibold px-6 py-3 rounded-xl hover:bg-accent-hover transition"
+                style={{
+                  boxShadow: '0 -6px 30px -6px var(--accent-500), 0 6px 30px -6px var(--accent-500)',
+                }}
               >
                 Send Message
               </button>

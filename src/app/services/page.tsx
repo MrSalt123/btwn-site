@@ -30,6 +30,7 @@ export default function Home() {
       );
 
       // Delay subtext until main headline finishes animating
+      {/*
       setTimeout(() => {
         if (subtextRef.current) {
 
@@ -45,7 +46,7 @@ export default function Home() {
             }
           );
         }
-      }, 550); // Adjust this to match your headline animation duration
+      }, 550); */} // Adjust this to match your headline animation duration
     });
   }, []);
 

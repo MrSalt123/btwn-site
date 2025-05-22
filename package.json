@@ -12,6 +12,7 @@
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "@splinetool/react-spline": "^4.0.0",
     "@tsparticles/react": "^3.0.0",
+    "bootstrap": "^5.3.6",
     "framer-motion": "^12.10.5",
     "lucide-react": "^0.510.0",
     "motion": "^12.12.1",
