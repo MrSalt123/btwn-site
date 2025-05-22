@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { animate, stagger } from "motion";
 import { splitText } from "motion-plus";
 import { motion, useScroll, useTransform } from "framer-motion";
+import type { MotionValue } from "framer-motion";
 import Image from "next/image";
 
 // ─── SERVICES DATA ─────────────────────────────────────────────
@@ -80,13 +81,19 @@ const services = [
   },
 ];
 
+type Service = {
+  title: string;
+  bullets: string[];
+  image: string;
+};
+
 // ─── PARALLAX HELPER ───────────────────────────────────────────
-function useParallax(value: any, distance: number) {
+function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
 // ─── INDIVIDUAL SERVICE SECTION ────────────────────────────────
-function ParallaxItem({ service, index }: { service: any; index: number }) {
+function ParallaxItem({ service, index }: { service: Service; index: number }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
