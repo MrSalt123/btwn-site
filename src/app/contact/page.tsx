@@ -5,12 +5,6 @@ import { useState } from "react";
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // TODO: connect to API route or service
-    setSubmitted(true);
-  };
-
   return (
     <div className="min-h-screen px-6 py-24 md:px-12 bg-background text-foreground">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
@@ -27,11 +21,6 @@ export default function ContactPage() {
 
         {/* Right: Contact Form */}
         <div>
-          {submitted ? (
-            <div className="text-green-500 text-xl font-medium">
-              ✅ Message sent! We’ll be in touch shortly.
-            </div>
-          ) : (
             <form
               action="https://formsubmit.co/hello@btwn.design" method="POST"
               className="grid gap-6"
