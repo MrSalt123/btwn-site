@@ -108,9 +108,8 @@ function ParallaxItem({ service, index }: { service: Service; index: number }) {
       className="min-h-screen scroll-snap-start flex items-center justify-center px-6"
     >
       <div
-        className={`flex flex-col md:flex-row ${
-          !isEven && "md:flex-row-reverse"
-        } max-w-6xl w-full gap-12 items-center`}
+        className={`flex flex-col md:flex-row ${!isEven && "md:flex-row-reverse"
+          } max-w-6xl w-full gap-12 items-center`}
       >
         <motion.div style={{ y }} className="w-full md:w-1/2">
           <Image
@@ -124,11 +123,14 @@ function ParallaxItem({ service, index }: { service: Service; index: number }) {
 
         <div className="w-full md:w-1/2">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {service.title}
+            <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent">{service.title}</span>
           </h2>
-          <ul className="list-disc list-inside text-neutral-400 text-lg space-y-2">
+          <ul className="text-neutral-300 text-lg space-y-2">
             {service.bullets.map((point: string, idx: number) => (
-              <li key={idx}>{point}</li>
+              <li key={idx} className="flex items-start gap-2">
+                <span className="text-[#6d28d9] font-bold text-xl">—</span>
+                <span>{point}</span>
+              </li>
             ))}
           </ul>
         </div>

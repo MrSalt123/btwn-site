@@ -29,7 +29,12 @@ export default function AboutPage() {
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-bold"
         >
-          Built by Two Developers Who Get It
+          <div className="inline-flex flex-col items-center">
+            <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent whitespace-nowrap">
+              Built by Developers Who Get It
+            </span>
+            <div className="mt-2 h-[2px] w-[80%] bg-gradient-to-r from-accent-200 via-accent to-accent-200 rounded-full" />
+          </div>
         </motion.h1>
 
         <motion.p
