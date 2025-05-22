@@ -32,13 +32,17 @@ export default function Home() {
       // Delay subtext until main headline finishes animating
       setTimeout(() => {
         if (subtextRef.current) {
+
           animate(
-            subtextRef.current,
+            subtextRef.current as Element,
             {
-              transform: ["translateY(10px)", "translateY(0px)"],
               opacity: [0, 1],
+              transform: ["translateY(10px)", "translateY(0px)"],
             },
-            { duration: 0.8, easing: "ease-out" }
+            {
+              duration: 0.8,
+              easing: "ease-out",
+            }
           );
         }
       }, 550); // Adjust this to match your headline animation duration
