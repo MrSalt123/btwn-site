@@ -1,4 +1,5 @@
-// app/contact/page.tsx
+import ContactFormClient from "./ContactFormClient";
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen px-6 py-24 md:px-12 bg-background text-foreground font-display">
@@ -21,6 +22,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-import dynamic from "next/dynamic";
-const ContactFormClient = dynamic(() => import("./ContactFormClient"), { ssr: false });
