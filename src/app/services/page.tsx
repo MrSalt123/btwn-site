@@ -7,11 +7,12 @@ import Accordion from "@/components/Accordion";
 
 export default function Home() {
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const subtextRef = useRef<HTMLHeadingElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.fonts.ready.then(() => {
-      if (!headingRef.current || !containerRef.current) return;
+      if (!headingRef.current || !containerRef.current || !subtextRef.current) return;
 
       containerRef.current.style.visibility = "visible";
 
@@ -28,6 +29,23 @@ export default function Home() {
         }
       );
 
+      // Delay subtext until main headline finishes animating
+      setTimeout(() => {
+        if (subtextRef.current) {
+
+          animate(
+            subtextRef.current as Element,
+            {
+              opacity: [0, 1],
+              transform: ["translateY(10px)", "translateY(0px)"],
+            },
+            {
+              duration: 0.8,
+              easing: "ease-out",
+            }
+          );
+        }
+      }, 550); // Adjust this to match your headline animation duration
     });
   }, []);
 
