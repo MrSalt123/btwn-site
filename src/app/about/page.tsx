@@ -20,7 +20,7 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <section className="min-h-screen px-6 py-24 md:py-32 bg-neutral-950 text-white font-display">
+    <section className="min-h-screen px-6 py-24 md:py-32 bg-background text-white font-display">
       <div className="max-w-5xl mx-auto text-center space-y-10">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
