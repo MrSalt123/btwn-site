@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { animate, scroll } from "motion";
+import { animate, scroll, timeline } from "motion";
 import Image from "next/image";
 
 const steps = [
@@ -35,7 +35,7 @@ export default function OurProcessSection() {
     useEffect(() => {
         const container = document.querySelector(".img-group-container");
 
-        if (!container) return; // 👈 early return if not found
+        if (!container) return; 
 
         const items = document.querySelectorAll(".img-container");
 

@@ -1,4 +1,5 @@
 'use client';
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -9,41 +10,44 @@ export default function Hero() {
       <p className="mt-4 max-w-xl text-lg text-neutral-300 font-display">Zero clutter. Maximum impact.</p>
 
       {/* ——— CTA button ——— */}
-      <a
-        href="/call"
-        className="
+      <motion.button whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }} >
+        <a
+          href="/contact"
+          className="
           group relative mt-8 inline-flex items-center justify-center text-center
           rounded-full bg-accent px-8 py-3
           text-background transition hover:bg-accent-hover hover:cursor-pointer
           focus:outline-none
         "
-        style={{
-          boxShadow: '0 -6px 30px -6px var(--accent-500), 0 6px 30px -6px var(--accent-500)',
-        }}
-      >
-        {/* -------- Label -------- */}
-        <span
-          className="
+          style={{
+            boxShadow: '0 -6px 30px -6px var(--accent-500), 0 6px 30px -6px var(--accent-500)',
+          }}
+        >
+          {/* -------- Label -------- */}
+          <span
+            className="
             transition-transform duration-300
             group-hover:-translate-x-2 font-display text-foreground      
           "
-        >
-          Request a Quote
-        </span>
+          >
+            Request a Quote
+          </span>
 
-        {/* -------- Arrow (drawn) -------- */}
-        <span
-          className="
+          {/* -------- Arrow (drawn) -------- */}
+          <span
+            className="
             absolute right-4 flex items-center ml-3        
             origin-left                            
             scale-x-0 group-hover:scale-x-100        
             transition-transform duration-300 ease-out text-foreground
           "
-          aria-hidden="true"
-        >
-          →
-        </span>
-      </a>
+            aria-hidden="true"
+          >
+            →
+          </span>
+        </a>
+      </motion.button>
     </section>
   );
 }

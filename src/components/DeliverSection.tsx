@@ -60,54 +60,48 @@ export default function DeliverSection() {
           </div>
         </h2>
 
+        {/* Feature Grid with Custom Layout */}
+        <div className="grid grid-cols-12 gap-4 mb-4 max-w-5xl mx-auto">
+          {/* Card 1 – takes 7 of 12 columns */}
+          <motion.div
+            ref={(el) => { cardRefs.current[0] = el; }}
+            className="glow-card col-span-12 md:col-span-7 h-[480px] relative rounded-2xl p-8 text-center bg-transparent overflow-hidden flex flex-col items-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Image src={features[0].src} alt={features[0].alt} width={240} height={240} className="mx-auto" />
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
+              {features[0].title}
+            </h3>
+            <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
+              {features[0].text}
+            </p>
+          </motion.div>
 
-        {/* Horizontal Feature Grid */}
-        <div className="flex flex-col md:flex-row gap-4 mb-4 justify-center mx-auto">
+          {/* Card 2 – takes 5 of 12 columns */}
+          <motion.div
+            ref={(el) => { cardRefs.current[1] = el; }}
+            className="glow-card col-span-12 md:col-span-5 h-[480px] relative rounded-2xl p-8 text-center bg-transparent overflow-hidden flex flex-col items-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: .2, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Image src={features[1].src} alt={features[1].alt} width={240} height={240} className="mx-auto" />
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
+              {features[1].title}
+            </h3>
+            <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
+              {features[1].text}
+            </p>
+          </motion.div>
 
-          <div className="w-full md:w-1/2 flex flex-col items-center text-center">
-            <motion.div
-              ref={(el) => { cardRefs.current[0] = el; }}
-              className="glow-card relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <Image src={features[0].src} alt={features[0].alt} width={240} height={240} className="mx-auto" />
-              <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
-                {features[0].title}
-              </h3>
-              <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
-                {features[0].text}
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="w-full md:w-1/2 flex flex-col items-center text-center">
-            <motion.div
-              ref={(el) => { cardRefs.current[1] = el; }}
-              className="glow-card relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: .2, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <Image src={features[1].src} alt={features[1].alt} width={240} height={240} className="mx-auto" />
-              <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mt-8 mb-4">
-                {features[1].title}
-              </h3>
-              <p className="leading-relaxed font-display text-[var(--color-neutral-200)]">
-                {features[1].text}
-              </p>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Bottom Row: Full Width */}
-        <div className="w-full flex flex-col items-center text-center max-w-3xl mx-auto">
+          {/* Card 3 – takes full width below */}
           <motion.div
             ref={(el) => { cardRefs.current[2] = el; }}
-            className="glow-card relative rounded-2xl p-8 text-center bg-transparent overflow-hidden"
+            className="glow-card col-span-12 relative rounded-2xl p-8 text-center bg-transparent overflow-hidden flex flex-col items-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: .2, duration: 0.6 }}
@@ -122,6 +116,8 @@ export default function DeliverSection() {
             </p>
           </motion.div>
         </div>
+
+
       </div>
     </section>
   );

@@ -79,7 +79,7 @@ export default function AccordionGrid() {
                             className={`mt-2 text-neutral-600 text-lg leading-relaxed transition-all duration-300 overflow-hidden ${openIndex === index ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
                                 }`}
                         >
-                            <p className="pt-1">{section.content}</p>
+                            <p className="pt-1 text-neutral-300">{section.content}</p>
                         </div>
                     </div>
                 ))}
