@@ -44,8 +44,7 @@ export default function AboutPage() {
           viewport={{ once: true }}
           className="text-lg md:text-xl leading-relaxed text-neutral-300"
         >
-          We’re two graduates from the University of Georgia with a passion for clean code, design that speaks, and digital experiences that work. With over 5 years of hands-on development, we’ve helped startups, small businesses, and creatives launch fast, beautiful websites that scale with them.
-        </motion.p>
+We’re two graduates from the University of Georgia who share a passion for clean code, thoughtful design, and building things that work. With experience in web development and design, we enjoy creating fast, modern websites that bring ideas to life — whether for small projects or big visions.        </motion.p>
 
         {/* What We Bring Section */}
         <motion.div
@@ -57,20 +56,20 @@ export default function AboutPage() {
         >
           {[
             {
-              title: "Modern Tech Stack",
-              desc: "React, Next.js, Tailwind, Framer Motion — fast, scalable builds from day one.",
+              title: "Built by Developers, Not Salespeople",
+              desc: "We’re hands-on builders who care more about performance and polish than upsells and fluff.",
             },
             {
-              title: "5+ Years Experience",
-              desc: "Hundreds of websites launched across industries, from local brands to SaaS tools.",
+              title: "Rooted in UGA, Growing Online",
+              desc: "What started as side projects at the University of Georgia became a full-on studio for modern web work.",
             },
             {
-              title: "Design-First Thinking",
-              desc: "Every project starts with UX. We build sites that look great and feel intuitive.",
+              title: "Design-Driven, Developer-Backed",
+              desc: "We blend creative design with technical know-how to build sites that actually work — and look good doing it.",
             },
             {
-              title: "Speed & SEO Built In",
-              desc: "Optimized Lighthouse scores and search-friendly structures out of the box.",
+              title: "Fast, Clean, and Future-Ready",
+              desc: "Our projects are built with performance, accessibility, and scalability in mind — no bloated templates here.",
             },
           ].map((item, index) => (
             <motion.div

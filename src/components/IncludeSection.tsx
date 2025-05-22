@@ -56,49 +56,49 @@ export default function IncludeSection() {
             <section className="text-white py-24 px-6 text-center">
                 <div className="max-w-2xl mx-auto">
                     <h2 className="text-foreground text-4xl md:text-5xl font-display font-bold">
-                        <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent whitespace-nowrap">
+                        <span className="bg-gradient-to-r from-accent-200 via-accent to-accent-200 bg-clip-text text-transparent">
                             Ready to grow online?
                         </span>
                     </h2>
                     <p className="mt-4 text-lg text-neutral-300 font-display">
                         Let’s turn your vision into a website that works.
                     </p>
-                    <motion.button whileHover={{ scale: 1.1 }} 
-            whileTap={{ scale: 0.9 }} >
-                    <a
-                        href="/contact"
-                        className="
+                    <motion.button whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }} >
+                        <a
+                            href="/contact"
+                            className="
           group relative mt-8 inline-flex items-center justify-center
           rounded-full bg-accent px-8 py-3
           text-background transition hover:bg-accent-hover
           focus:outline-none hover:cursor-pointer
         "
-                        style={{
-                            boxShadow: '0 -6px 30px -6px var(--accent-500), 0 6px 30px -6px var(--accent-500)',
-                        }}
-                    >
+                            style={{
+                                boxShadow: '0 -6px 30px -6px var(--accent-500), 0 6px 30px -6px var(--accent-500)',
+                            }}
+                        >
 
-                        <span
-                            className="
+                            <span
+                                className="
             transition-transform duration-300
             group-hover:-translate-x-2 font-display text-foreground         
           "
-                        >
-                            Let&apos;s talk
-                        </span>
+                            >
+                                Let&apos;s talk
+                            </span>
 
-                        <span
-                            className="
+                            <span
+                                className="
             absolute right-4 flex items-center ml-3         
             origin-left                       
             scale-x-0 group-hover:scale-x-100           
             transition-transform duration-300 ease-out text-foreground
           "
-                            aria-hidden="true"
-                        >
-                            →
-                        </span>
-                    </a>
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+                        </a>
                     </motion.button>
                 </div>
             </section>

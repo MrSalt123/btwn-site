@@ -46,7 +46,7 @@ export default function ContactFormClient() {
     <div className="text-center">
       <h2 className="text-3xl font-semibold text-accent mb-4">Message Sent!</h2>
       <p className="text-lg text-neutral-300">
-        Thanks for reaching out — you should hear back from us within 48 hours.
+        Thanks for reaching out — you should hear back from us within 24 hours.
       </p>
     </div>
   ) : (
