@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import ContactFormClient from "./ContactFormClient";
 
 export default function ContactPage() {
@@ -16,7 +17,9 @@ export default function ContactPage() {
         </div>
 
         <div>
-          <ContactFormClient />
+          <Suspense fallback={null}>
+            <ContactFormClient />
+          </Suspense>
         </div>
       </div>
     </div>
