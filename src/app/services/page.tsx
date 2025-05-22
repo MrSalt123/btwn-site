@@ -7,7 +7,6 @@ import Accordion from "@/components/Accordion";
 
 export default function Home() {
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const subtextRef = useRef<HTMLHeadingElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
