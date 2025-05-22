@@ -1,10 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-
   return (
     <div className="min-h-screen px-6 py-24 md:px-12 bg-background text-foreground">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
@@ -133,7 +129,6 @@ export default function ContactPage() {
                 Send Message
               </button>
             </form>
-          )}
         </div>
       </div>
     </div>
