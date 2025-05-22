@@ -34,7 +34,10 @@ export default function Home() {
         if (subtextRef.current) {
           animate(
             subtextRef.current,
-            { opacity: [0, 1], y: [10, 0] },
+            {
+              transform: ["translateY(10px)", "translateY(0px)"],
+              opacity: [0, 1],
+            },
             { duration: 0.8, easing: "ease-out" }
           );
         }
