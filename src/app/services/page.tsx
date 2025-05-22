@@ -29,24 +29,6 @@ export default function Home() {
         }
       );
 
-      // Delay subtext until main headline finishes animating
-      {/*
-      setTimeout(() => {
-        if (subtextRef.current) {
-
-          animate(
-            subtextRef.current as Element,
-            {
-              opacity: [0, 1],
-              transform: ["translateY(10px)", "translateY(0px)"],
-            },
-            {
-              duration: 0.8,
-              easing: "ease-out",
-            }
-          );
-        }
-      }, 550); */} // Adjust this to match your headline animation duration
     });
   }, []);
 
@@ -69,7 +51,6 @@ export default function Home() {
                   Your all-in-one web partner.
                 </h1>
                 <h3
-                  ref={subtextRef}
                   className="text-xl md:text-2xl text-neutral-300 font-medium leading-snug opacity-0"
                 >
                   We design, develop, and maintain fast, branded websites that grow with you.
