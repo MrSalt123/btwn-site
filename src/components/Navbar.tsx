@@ -27,11 +27,11 @@ export default function Navbar() {
       >
         {/* Logo (Desktop) */}
         <Image
-          src="/btwnlogo.svg"
+          src="/btwnlogofixed.svg"
           alt="Btwn logo"
           className="cursor-pointer hidden md:block"
-          width={300}
-          height={150}
+          width={125}
+          height={125}
           priority
           onClick={() => router.push('/')}
         />
