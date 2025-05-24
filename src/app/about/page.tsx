@@ -56,15 +56,15 @@ We’re two graduates from the University of Georgia who share a passion for cle
         >
           {[
             {
-              title: "Built by Developers, Not Salespeople",
+              title: "Built by Developers",
               desc: "We’re hands-on builders who care more about performance and polish than upsells and fluff.",
             },
             {
-              title: "Rooted in UGA, Growing Online",
+              title: "Rooted in UGA",
               desc: "What started as side projects at the University of Georgia became a full-on studio for modern web work.",
             },
             {
-              title: "Design-Driven, Developer-Backed",
+              title: "Design-Driven",
               desc: "We blend creative design with technical know-how to build sites that actually work — and look good doing it.",
             },
             {
