@@ -17,7 +17,7 @@ const services = [
       "Optimized for performance and branding",
       "Built with future scalability in mind",
     ],
-    image: "/uidesign2.png",
+    image: "/customweb.png",
   },
   {
     title: "Search Engine Optimization (SEO)",
@@ -27,7 +27,7 @@ const services = [
       "Fast-loading performance for ranking boost",
       "Built-in SEO tools and reports",
     ],
-    image: "/seo.png",
+    image: "/seo2.png",
   },
   {
     title: "Secure Hosting & Maintenance",
@@ -37,7 +37,7 @@ const services = [
       "Monitoring and performance alerts",
       "Free support and updates",
     ],
-    image: "/cyber.png",
+    image: "/hosting.png",
   },
   {
     title: "Mobile‑First Design",
@@ -47,17 +47,7 @@ const services = [
       "Performance-optimized for mobile",
       "Flexible layouts for future changes",
     ],
-    image: "/mobile.png",
-  },
-  {
-    title: "Database Integration",
-    bullets: [
-      "Custom-built CMS or backend",
-      "Secure data storage and APIs",
-      "Admin dashboards for content control",
-      "Built with scalability in mind",
-    ],
-    image: "/db.png",
+    image: "/mobileui.png",
   },
   {
     title: "E‑commerce Solutions",
@@ -67,7 +57,7 @@ const services = [
       "Custom cart and order flows",
       "Optional Shopify/Stripe integration",
     ],
-    image: "/ecomm.png",
+    image: "/ecommerce.png",
   },
   {
     title: "Ongoing Web Management",
@@ -77,7 +67,7 @@ const services = [
       "Bug fixes & backups included",
       "Scaling with your business growth",
     ],
-    image: "/upkeep.png",
+    image: "/management.png",
   },
 ];
 
@@ -105,8 +95,8 @@ function ParallaxItem({ service, index }: { service: Service; index: number }) {
   return (
     <section
       ref={ref}
-      className="min-h-screen scroll-snap-start flex items-center justify-center px-6"
-    >
+      className="min-h-screen scroll-snap-start flex items-center justify-center px-6 mb-16 md:mb-0"
+      >
       <div
         className={`flex flex-col md:flex-row ${!isEven && "md:flex-row-reverse"
           } max-w-6xl w-full gap-12 items-center`}
@@ -118,6 +108,9 @@ function ParallaxItem({ service, index }: { service: Service; index: number }) {
             width={600}
             height={400}
             className="rounded-xl shadow-lg object-cover w-full h-auto"
+            style={{
+              boxShadow: '0 -6px 30px -6px var(--accent-500), 0 6px 30px -6px var(--accent-500)',
+            }}
           />
         </motion.div>
 
